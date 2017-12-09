@@ -2,11 +2,19 @@
 
 {% block main %}
 
-<div>
 
+<div class="container col-md-offset-4 col-md-4">
+<div class="panel panel-default m-5">
+    <div class="panel panel-heading"> Generations</div>
+  <div class="panel-body">
+<div class="list-group">
+    {% for foo in object_list %}
+         <a href="#" class="list-group-item center" style="text-align: center"><span class="badge">{{ foo }}</span></a>
+{% endfor %}
 </div>
-
-
+  </div>
+</div>
+</div>
 
 
 {% endblock %}

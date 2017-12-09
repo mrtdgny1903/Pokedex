@@ -12,8 +12,6 @@ def PokeDetail(request,pk):
     template_name = 'poke/detail.html'
     return render(request, template_name, {"object":model,"Similars": Pokemon.objects.filter(skill_type=model.skill_type).order_by("?")[0:3]})
 
-
-
 class IndexView(generic.ListView):
     template_name = 'poke/index.html'
     def get_queryset(self):
@@ -25,10 +23,11 @@ class PokemonList(generic.ListView):
         return  Pokemon.objects.order_by().all()
 
 
-
 class StoryView(generic.TemplateView):
     template_name = 'poke/story.html'
 
 
 class GenerationsView(generic.ListView):
-    template_name = 'poke/generations.html.html'
+    template_name = 'poke/generations.html'
+    def get_queryset(self):
+        return  Pokemon.Generation.values

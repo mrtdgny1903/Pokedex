@@ -45,7 +45,7 @@ class Pokemon(models.Model):
     def GetGender(self):
         return self.Gender[int(self.gender_type)][1]
 
-    Generation = (
+    """ Generation = (
         ('0', 'I'),
         ('1', 'II'),
         ('2', 'III'),
@@ -54,8 +54,18 @@ class Pokemon(models.Model):
         ('5', 'VI'),
         ('6', 'VII'),
 
-    )
-    generation_type = models.CharField(max_length=1, choices=Generation)
+    ) """
+
+    Generation = {
+        '0' :'I',
+        '1' :'II',
+        '2' :'III',
+        '3' :'IV',
+        '4' :'V',
+        '5' :'VI',
+        '6' :'VII',
+    }
+    generation_type = models.CharField(max_length=1,choices=Generation.items())
 
     def __str__(self):
         return self.Name

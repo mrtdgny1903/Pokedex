@@ -5,10 +5,10 @@ app_name = 'poke'
 urlpatterns = [
     # /music/
     url(r'^$' ,views.IndexView.as_view() ,name='index'),
-    url(r'^PokemonList/$', views.PokemonList.as_view(), name='PokemonList'),
-    url(r'^Detail/(?P<pk>[0-9]+)/$', views.PokeDetail, name='PokeDetail'),
-    url(r'^Story/$', views.StoryView.as_view(), name='story'),
-    url(r'^Generations/$', views.StoryView.as_view(), name='Generations'),
+    url(r'^pokemonlist/$', views.PokemonList.as_view(), name='pokemonList'),
+    url(r'^detail/(?P<pk>[0-9]+)/$', views.PokeDetail, name='pokeDetail'),
+    url(r'^story/$', views.StoryView.as_view(), name='story'),
+    url(r'^generations/$', views.GenerationsView.as_view(), name='generations'),
    
     # /music/<album_id>/
     #url(r'^(?P<pk>[0-9]+)/$', views.DetailView.as_view(), name='detail'),

@@ -3,7 +3,7 @@ import datetime
 class Pokemon(models.Model):
 
     Name = models.CharField(max_length=40)
-    Picture =models.CharField(max_length=120)
+    Picture = models.ImageField(upload_to='images/', default="images/charmander.jpg")
     Height = models.IntegerField()
     Weight = models.IntegerField()
     Abilities =models.CharField(max_length=40)
@@ -56,13 +56,12 @@ class Pokemon(models.Model):
 class Trainer(models.Model):
 
     Name = models.CharField(max_length=40)
-    Picture =models.FileField(upload_to='images/')
+    Picture = models.ImageField(upload_to='images/', default="images/charmander.jpg")
     Appearance = models.CharField(max_length=120)
     Pokemons = models.ManyToManyField(Pokemon)
     Gender = (
         ('0', 'Male'),
         ('1', 'Female'),
-
     )
     gender_type = models.CharField(max_length=1, choices=Gender)
 
@@ -79,7 +78,7 @@ class Trainer(models.Model):
     region_type = models.CharField(max_length=1, choices=Region)
 
 class Compare(models.Model):
-    First = models.ForeignKey(Pokemon, related_name="First"  )
+    First = models.ForeignKey(Pokemon, related_name="First")
     Second = models.ForeignKey(Pokemon, related_name="Second")
     CompareTime = models.DateField()
     SpecialName = models.CharField(max_length=120)

@@ -1,6 +1,6 @@
 from django.db import models
-
-class pokemon(models.Model):
+import datetime
+class Pokemon(models.Model):
 
     Name = models.CharField(max_length=40)
     Picture =models.CharField(max_length=120)
@@ -11,7 +11,7 @@ class pokemon(models.Model):
     Attack = models.IntegerField()
     Speed = models.IntegerField()
     Appearence = models.CharField(max_length=120)
-
+    
     Type = (
         ('0', 'Fire'),
         ('1', 'Water'),
@@ -53,12 +53,12 @@ class pokemon(models.Model):
     )
     generation_type = models.CharField(max_length=1, choices=Generation)
 
-class trainer(models.Model):
+class Trainer(models.Model):
 
     Name = models.CharField(max_length=40)
     Picture =models.CharField(max_length=120)
     Appearance = models.CharField(max_length=120)
-
+    Pokemons = models.ManyToManyField(Pokemon)
     Gender = (
         ('0', 'Male'),
         ('1', 'Female'),
@@ -78,6 +78,13 @@ class trainer(models.Model):
     )
     region_type = models.CharField(max_length=1, choices=Region)
 
+class Compare(models.Model):
+    First = models.ForeignKey(Pokemon,on_delete=models.CASCADE())
+    Second = models.ForeignKey(Pokemon,on_delete=models.CASCADE())
+    CompareTime = models.DateField()
+    SpecialName = models.CharField(max_length=120)
+    def __init__(self):
+        CompareTime = datetime.datetime.now()
 
 
 

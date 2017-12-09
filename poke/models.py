@@ -79,11 +79,12 @@ class Trainer(models.Model):
     region_type = models.CharField(max_length=1, choices=Region)
 
 class Compare(models.Model):
-    First = models.ForeignKey(Pokemon,on_delete=models.CASCADE())
-    Second = models.ForeignKey(Pokemon,on_delete=models.CASCADE())
+    First = models.ForeignKey(Pokemon, related_name="First"  )
+    Second = models.ForeignKey(Pokemon, related_name="Second")
     CompareTime = models.DateField()
     SpecialName = models.CharField(max_length=120)
-    def __init__(self):
+
+def __init__(self):
         CompareTime = datetime.datetime.now()
 
 

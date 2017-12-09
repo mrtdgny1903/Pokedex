@@ -33,7 +33,7 @@ class Pokemon(models.Model):
     skill_type = models.CharField(max_length=1, choices=Type)
 
     def GetType(self):
-        return self.Type[0][1]
+        return self.Type[int(self.skill_type)][1]
 
     Gender = (
         ('0', 'Male'),
@@ -41,6 +41,9 @@ class Pokemon(models.Model):
 
     )
     gender_type = models.CharField(max_length=1, choices=Gender)
+
+    def GetGender(self):
+        return self.Gender[int(self.gender_type)][1]
 
     Generation = (
         ('0', 'I'),

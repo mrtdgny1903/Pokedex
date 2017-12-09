@@ -1,5 +1,117 @@
 {% extends 'poke/base.html' %}
 
 {% block main %}
-{{ object.Name }}
+
+    <div class="card">
+
+
+
+    <!--Card content-->
+    <div class="card-body">
+        <!--Title-->
+
+<div class="container">
+      <div class="row">
+
+
+        <div class=" col-md-12 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad" >
+          <div class="panel panel-info">
+            <div class="panel-heading">
+              <h3 class="panel-title">{{ object.Name }}</h3>
+            </div>
+            <div class="panel-body">
+              <div class="row">
+                  <div class="col-md-6">
+                <div class="col-md-3 col-lg-3 " align="center"> <img alt="Pokemon Pic" src="/static/{{ object.Picture.url }}" class="img-circle img-responsive"> </div>
+
+                <div class="col-xs-10 col-sm-10 hidden-md hidden-lg"> <br>
+                  <dl>
+                    <dt>Type:</dt>
+                    <dd>{{ object.GetType }}</dd>
+                    <dt> Weight </dt>
+                    <dd>{{ object.Weight }}</dd>
+                    <dt>Height</dt>
+                      <dd>{{ object.Height }}</dd>
+                    <dt>Gender</dt>
+                    <dd>{{ object.GetGender }}</dd>
+<dt>Special Skills</dt>
+                    <dd>{{ object.Abilities  }}</dd>
+                  </dl>
+                </div>
+</div>
+                  <div class="col-md-6">
+                                  <div class=" col-md-12">
+                     <div class="panel panel-primary">
+                    <div class="panel-heading">
+              <h4 class="panel-title">Abbilities</h4>
+
+                  <table class="table table-user-information">
+                    <tbody>
+                      <tr>
+                        <td>Attack:</td>
+                        <td>{{ object.Attack }}</td>
+                      </tr>
+                      <tr>
+                        <td>Deffence:</td>
+                        <td>{{ object.Deff }}</td>
+                      </tr>
+                      <tr>
+                        <td>Speed : </td>
+                        <td>{{ object.Speed }}</td>
+                      </tr>
+
+
+                      </tr>
+
+                    </tbody>
+                  </table>
+      </div>
+
+                </div>
+              </div>
+<div class="col-md-12">
+
+    <div class="list-group">
+        {% for pokemon in Similars %}
+          <a href="{% url "poke:PokeDetail" pokemon.pk %}" class="list-group-item list-group-item-action flex-column align-items-start">
+    <div class="d-flex w-100 justify-content-between">
+        <div class="col-md-9">
+      <h5 class="mb-1">{{ pokemon.Name }}</h5>
+      <small>{{ pokemon.GetType }}</small>
+            </div>
+           <img src="/static/{{ pokemon.Picture.url }}" class="h-25 col-md-3"/>
+    </div>
+
+    <small>{{  pokemon.Abilities  }}</small>
+  </a>
+        {% endfor %}
+
+
+
+    </div>
+        </div>
+
+
+                  </div>
+            </div>
+
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
 {% endblock %}

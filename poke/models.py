@@ -56,7 +56,7 @@ class Pokemon(models.Model):
 class Trainer(models.Model):
 
     Name = models.CharField(max_length=40)
-    Picture =models.CharField(max_length=120)
+    Picture =models.FileField(upload_to='images/')
     Appearance = models.CharField(max_length=120)
     Pokemons = models.ManyToManyField(Pokemon)
     Gender = (

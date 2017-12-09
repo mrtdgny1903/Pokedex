@@ -3,10 +3,11 @@
 
 
 
+    <div class="container">
     <div class="row">
-    <div class="col-md-4 text-center">
-    <button id="singlebutton" href="{% url "poke:index" %}" class="btn btn-primary">SUPRISE ME!</button>
-</div>
+    <div class="col-md-offset-6 col-md-6 ">
+<button type="button" class="btn btn-success ribbon">Be a Trainer!!</button>
+</div></div>
 </div>
 
 <div class="row">
@@ -21,7 +22,10 @@
                     <a href="#">{{ pokemon.Name }}</a>
                   </h4>
                   <h5>Pokemon Name</h5>
+
                   <p class="card-text">{{ pokemon.GetType }}</p>
+
+
                 </div>
                 <div class="card-footer">
                   <button class="btn btn-md ">Detail</button>
@@ -32,5 +36,8 @@
 
 
 {% endfor %}
+
           </div>
+
+
 {% endblock %}

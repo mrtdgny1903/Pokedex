@@ -15,6 +15,7 @@
 
     <!-- Custom styles for this template -->
     <link href="../../static/css/shop-homepage.css" rel="stylesheet">
+    <link href="../../static/css/custom.css" rel="stylesheet">
 
   </head>
 
@@ -54,20 +55,11 @@
         {% block sidebar %}
       <div class="row">
 
-        <div class="col-lg-3">
 
-          <h1 class="my-4">Shop Name</h1>
-          <div class="list-group">
-            <a href="#" class="list-group-item">Category 1</a>
-            <a href="#" class="list-group-item">Category 2</a>
-            <a href="#" class="list-group-item">Category 3</a>
-          </div>
-
-        </div>
         {% endblock %}
         <!-- /.col-lg-3 -->
 
-        <div class="col-lg-9">
+        <div class="col-md-12">
 
             {% block main %}
 
@@ -91,6 +83,7 @@
     </footer>
 
     <!-- Bootstrap core JavaScript -->
+       <script src="../../static/js/custom.js"></script>
     <script src="../../static/jquery/jquery.min.js"></script>
     <script src="../../static/bootstrap/js/bootstrap.bundle.min.js"></script>
 

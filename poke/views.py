@@ -1,3 +1,8 @@
-from django.shortcuts import render
+from django.views import generic
+from .models import  pokemon
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 
-# Create your views here.
+class IndexView(generic.ListView):
+    template_name = 'poke/index.html'
+    def get_queryset(self):
+        return  pokemon.objects.all()

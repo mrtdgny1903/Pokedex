@@ -1,5 +1,5 @@
 from django.views import generic
-from .models import  pokemon
+from .models import  Pokemon
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 
 class IndexView(generic.ListView):

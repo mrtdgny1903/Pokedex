@@ -32,7 +32,8 @@ class Pokemon(models.Model):
     )
     skill_type = models.CharField(max_length=1, choices=Type)
 
-
+    def GetType(self):
+        return self.Type[0][1]
 
     Gender = (
         ('0', 'Male'),
@@ -84,8 +85,8 @@ class Trainer(models.Model):
         return self.Name
 
 class Compare(models.Model):
-    First = models.ForeignKey(Pokemon, related_name="First")
-    Second = models.ForeignKey(Pokemon, related_name="Second")
+    First = models.ForeignKey(Pokemon, on_delete=models.CASCADE, related_name="First")
+    Second = models.ForeignKey(Pokemon, on_delete=models.CASCADE, related_name="Second")
     CompareTime = models.DateField()
     SpecialName = models.CharField(max_length=120)
 

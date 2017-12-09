@@ -1,16 +1,27 @@
 {% extends 'poke/base.html' %}
 {% block main %}
+
+
+
+    <div class="row">
+    <div class="col-md-4 text-center">
+    <button id="singlebutton" href="{% url "poke:index" %}" class="btn btn-primary">SUPRISE ME!</button>
+</div>
+</div>
+
 <div class="row">
+{% for pokemon in object_list %}
+
 
             <div class="col-lg-4 col-md-6 mb-4">
               <div class="card h-100">
-                <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+                <a href="#"><img class="card-img-top" src="{{ pokemon.Picture.url }}" alt=""></a>
                 <div class="card-body">
                   <h4 class="card-title">
-                    <a href="#">Item One</a>
+                    <a href="#">{{ pokemon.Name }}</a>
                   </h4>
                   <h5>Pokemon Name</h5>
-                  <p class="card-text">Properties</p>
+                  <p class="card-text">{{ pokemon.GetType }}</p>
                 </div>
                 <div class="card-footer">
                   <button class="btn btn-md ">Detail</button>
@@ -20,5 +31,6 @@
 
 
 
+{% endfor %}
           </div>
 {% endblock %}

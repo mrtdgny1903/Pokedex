@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4ce31b69-f278-4d1e-a697-e70266eb53fd" name="Default" comment="Base / Url Düzeltildi">
+    <list default="true" id="4ce31b69-f278-4d1e-a697-e70266eb53fd" name="Default" comment="İndex Güncellendi">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,16 +16,34 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/poke/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="147">
-              <caret line="101" column="0" lean-forward="true" selection-start-line="101" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
+            <state relative-caret-position="105">
+              <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
-                <element signature="e#81#1681#0" expanded="false" />
-                <element signature="e#1717#2408#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/poke/templates/poke/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="250">
+              <caret line="20" column="41" lean-forward="false" selection-start-line="20" selection-start-column="41" selection-end-line="20" selection-end-column="41" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="compare_form.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/poke/templates/poke/compare_form.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="147">
+              <caret line="7" column="49" lean-forward="false" selection-start-line="7" selection-start-column="49" selection-end-line="7" selection-end-column="49" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -52,11 +70,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/poke/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="379">
-              <caret line="39" column="32" lean-forward="false" selection-start-line="39" selection-start-column="32" selection-end-line="39" selection-end-column="32" />
+            <state relative-caret-position="504">
+              <caret line="24" column="28" lean-forward="false" selection-start-line="24" selection-start-column="28" selection-end-line="24" selection-end-column="28" />
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
               </folding>
@@ -116,18 +134,18 @@
         <option value="$PROJECT_DIR$/poke/templates/poke/generations.html" />
         <option value="$PROJECT_DIR$/poke/static/css/custom.css" />
         <option value="$PROJECT_DIR$/poke/forms.py" />
-        <option value="$PROJECT_DIR$/poke/templates/poke/index.html" />
         <option value="$PROJECT_DIR$/poke/templates/poke/detail.html" />
         <option value="$PROJECT_DIR$/poke/urls.py" />
         <option value="$PROJECT_DIR$/poke/templates/poke/base.html" />
         <option value="$PROJECT_DIR$/poke/templates/poke/compare.html" />
         <option value="$PROJECT_DIR$/poke/templates/poke/form-template.html" />
-        <option value="$PROJECT_DIR$/poke/templates/poke/compare_form.html" />
         <option value="$PROJECT_DIR$/poke/migrations/0004_auto_20171209_1638.py" />
         <option value="$PROJECT_DIR$/poke/migrations/0004_auto_20171209_1632.py" />
         <option value="$PROJECT_DIR$/poke/admin.py" />
-        <option value="$PROJECT_DIR$/poke/views.py" />
         <option value="$PROJECT_DIR$/poke/models.py" />
+        <option value="$PROJECT_DIR$/poke/templates/poke/index.html" />
+        <option value="$PROJECT_DIR$/poke/templates/poke/compare_form.html" />
+        <option value="$PROJECT_DIR$/poke/views.py" />
       </list>
     </option>
   </component>
@@ -365,7 +383,14 @@
       <option name="project" value="LOCAL" />
       <updated>1512915172445</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="İndex Güncellendi">
+      <created>1512917756186</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1512917756186</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -411,7 +436,8 @@
     <MESSAGE value="Forms" />
     <MESSAGE value="Base / Url Düzeltildi" />
     <MESSAGE value="Migrate edildi, flan filan" />
-    <option name="LAST_COMMIT_MESSAGE" value="Migrate edildi, flan filan" />
+    <MESSAGE value="İndex Güncellendi" />
+    <option name="LAST_COMMIT_MESSAGE" value="İndex Güncellendi" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -651,14 +677,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/poke/templates/poke/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="334">
-          <caret line="30" column="47" lean-forward="false" selection-start-line="30" selection-start-column="47" selection-end-line="30" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/poke/templates/poke/form-template.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
@@ -687,14 +705,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="273">
           <caret line="44" column="33" lean-forward="true" selection-start-line="44" selection-start-column="33" selection-end-line="44" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/poke/templates/poke/compare_form.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="567">
-          <caret line="27" column="14" lean-forward="false" selection-start-line="27" selection-start-column="14" selection-end-line="27" selection-end-column="14" />
           <folding />
         </state>
       </provider>
@@ -815,24 +825,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/poke/views.py">
+    <entry file="file://$PROJECT_DIR$/poke/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
-          <caret line="39" column="32" lean-forward="false" selection-start-line="39" selection-start-column="32" selection-end-line="39" selection-end-column="32" />
+        <state relative-caret-position="105">
+          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
           <folding>
-            <element signature="e#0#32#0" expanded="true" />
+            <element signature="e#0#28#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/poke/models.py">
+    <entry file="file://$PROJECT_DIR$/poke/templates/poke/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="20" column="41" lean-forward="false" selection-start-line="20" selection-start-column="41" selection-end-line="20" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/poke/templates/poke/compare_form.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="147">
-          <caret line="101" column="0" lean-forward="true" selection-start-line="101" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
+          <caret line="7" column="49" lean-forward="false" selection-start-line="7" selection-start-column="49" selection-end-line="7" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/poke/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="24" column="28" lean-forward="false" selection-start-line="24" selection-start-column="28" selection-end-line="24" selection-end-column="28" />
           <folding>
-            <element signature="e#0#28#0" expanded="true" />
-            <element signature="e#81#1681#0" expanded="false" />
-            <element signature="e#1717#2408#0" expanded="false" />
+            <element signature="e#0#32#0" expanded="true" />
           </folding>
         </state>
       </provider>

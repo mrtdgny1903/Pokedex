@@ -2,15 +2,6 @@ from django.views import generic
 from .models import  Pokemon,Compare
 from django.shortcuts import render, get_object_or_404
 from django.views.generic.edit import CreateView
-from django.http import HttpResponse
-from django.template import loader
-from django.db.models import Q
-
-def PokeDetail(request,pk):
-    #model = Pokemon.objects.get(pk)
-    model = get_object_or_404(Pokemon, pk=pk)
-    template_name = 'poke/detail.html'
-    return render(request, template_name, {"object":model,"Similars": Pokemon.objects.filter(skill_type=model.skill_type).exclude(pk=pk).order_by("?")[0:3]})
 
 class IndexView(generic.ListView):
     template_name = 'poke/index.html'

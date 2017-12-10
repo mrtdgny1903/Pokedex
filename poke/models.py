@@ -1,5 +1,6 @@
 from django.db import models
 import datetime
+from django.contrib.auth.models import User
 class Pokemon(models.Model):
 
     Name = models.CharField(max_length=40)
@@ -73,6 +74,7 @@ class Pokemon(models.Model):
 class Trainer(models.Model):
 
     Name = models.CharField(max_length=40)
+    UserT = models.OneToOneField(User,on_delete=models.CASCADE)
     Picture = models.FileField(upload_to='images/')
     Appearance = models.CharField(max_length=120)
     Pokemons = models.ManyToManyField(Pokemon)

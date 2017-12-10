@@ -73,7 +73,7 @@
 
     <div class="list-group">
         {% for pokemon in Similars %}
-          <a href="{% url "poke:PokeDetail" pokemon.pk %}" class="list-group-item list-group-item-action flex-column align-items-start">
+          <a href="{% url "poke:pokeDetail" pokemon.pk %}" class="list-group-item list-group-item-action flex-column align-items-start">
     <div class="d-flex w-100 justify-content-between">
         <div class="col-md-9">
       <h5 class="mb-1">{{ pokemon.Name }}</h5>

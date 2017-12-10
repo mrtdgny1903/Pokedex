@@ -4,7 +4,7 @@ from . import views
 app_name = 'poke'
 urlpatterns = [
     # /music/
-    url(r'^$' ,views.IndexView.as_view(),name='index'),
+    url(r'^$' ,views.IndexView,name='index'),
     url(r'^pokemonlist/$', views.PokemonList.as_view(), name='pokemonList'),
     url(r'^detail/(?P<pk>[0-9]+)/$', views.PokeDetail, name='pokeDetail'),
     url(r'^compDetail/(?P<pk>[0-9]+)/$', views.CompareDetail, name='compareDetail'),

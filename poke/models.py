@@ -103,13 +103,14 @@ class Trainer(models.Model):
 class Compare(models.Model):
          First = models.ForeignKey(Pokemon, on_delete=models.CASCADE, related_name="First")
          Second = models.ForeignKey(Pokemon, on_delete=models.CASCADE, related_name="Second",default=0)
-         CompareTime = models.DateField()
+         CompareTime = models.DateTimeField(default=datetime.datetime.now())
          SpecialName = models.CharField(max_length=120)
 
-         def __init__(self):
-            CompareTime = datetime.datetime.now()
+         def __str__(self):
+             return self.First.Name+" Vs. " + self.Second.Name
 
-
+         def get_absolute_url(self):
+             return "/poke/"
 
 
 

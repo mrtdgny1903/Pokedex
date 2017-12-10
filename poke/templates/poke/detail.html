@@ -78,17 +78,21 @@
 
     <div class="list-group">
         {% for pokemon in Similars %}
-          <a href="{% url "poke:pokeDetail" pokemon.pk %}" class="list-group-item list-group-item-action flex-column align-items-start">
-    <div class="d-flex w-100 justify-content-between">
-        <div class="col-md-9">
-      <h5 class="mb-1">{{ pokemon.Name }}</h5>
-      <small>{{ pokemon.GetType }}</small>
-            </div>
-           <img src="/static/{{ pokemon.Picture.url }}" class="h-25 col-md-3"/>
-    </div>
+          <div class="list-group-item list-group-item-action flex-column align-items-start">
+        <div class="d-flex w-100 justify-content-between">
+            <div class="col-md-9">
+          <h5 class="mb-1">{{ pokemon.Name }}</h5>
+          <small>{{ pokemon.GetType }}</small>
+                </div>
+                       <img src="/static/{{ pokemon.Picture.url }}" class="h-25 col-md-3"/>
+               </div>
+                <small>{{  pokemon.Abilities  }}</small>
+           <a href="{% url "poke:compareFast" object.pk pokemon.pk %}"><button class="btn btn-sm btn-success ribbon"> Compare </button></a>
+              <a href="{% url "poke:pokeDetail" pokemon.pk %}" ><button type="button" class="btn btn-sm btn-success ribbon"> Detail </button></a>
+          </div>
 
-    <small>{{  pokemon.Abilities  }}</small>
-  </a>
+
+
         {% endfor %}
 
 

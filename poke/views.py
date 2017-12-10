@@ -3,11 +3,11 @@ from .models import  Pokemon,Compare
 from django.shortcuts import render, get_object_or_404
 from django.views.generic.edit import CreateView
 
-class IndexView(generic.ListView):
+def IndexView(request):
+    extra_context = {"LastCompares" : Compare.objects.all().order_by("-CompareTime")[0:3] , "object_list":Pokemon.objects.order_by('?').all()[0:6]}
     template_name = 'poke/index.html'
-    extra_context = {"LastCompares" : Compare.objects.all().order_by("-CompareTime")[0:3]}
-    def get_queryset(self):
-        return  Pokemon.objects.order_by('?').all()[0:6]
+    return render(request, template_name, extra_context)
+
 
 class PokemonList(generic.ListView):
     template_name = 'poke/pokemonlist.html'

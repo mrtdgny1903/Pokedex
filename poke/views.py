@@ -1,6 +1,6 @@
 from django.views import generic
 from .models import  Pokemon,Compare
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404,redirect,reverse
 from django.views.generic.edit import CreateView
 
 def IndexView(request):
@@ -36,6 +36,14 @@ def CompareDetail(request, pk):
     template_name = 'poke/comparedetail.html'
     return render(request, template_name,
                   {"object": model, "Similars": Compare.objects.filter(First=model.First).order_by("?")[0:3]})
+
+def CompareFast(request,first,second):
+    new = Compare()
+    new.First = get_object_or_404(Pokemon,pk=first)
+    new.Second=get_object_or_404(Pokemon,pk=second)
+    new.SpecialName = ""
+    new.save()
+    return redirect("poke:compareDetail", pk=new.pk)
 
 
 class CompareCreate(CreateView):

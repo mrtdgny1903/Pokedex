@@ -7,6 +7,7 @@ urlpatterns = [
     url(r'^$' ,views.IndexView.as_view(),name='index'),
     url(r'^pokemonlist/$', views.PokemonList.as_view(), name='pokemonList'),
     url(r'^detail/(?P<pk>[0-9]+)/$', views.PokeDetail, name='pokeDetail'),
+    url(r'^compDetail/(?P<pk>[0-9]+)/$', views.CompareDetail, name='compareDetail'),
     url(r'^story/$', views.StoryView.as_view(), name='story'),
     url(r'^generations/$', views.GenerationsView.as_view(), name='generations'),
     url(r'^compare/$', views.CompareCreate.as_view(), name='compare'),

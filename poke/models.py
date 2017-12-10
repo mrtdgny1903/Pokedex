@@ -1,6 +1,7 @@
 from django.db import models
 import datetime
-from django.contrib.auth.models import User
+
+
 class Pokemon(models.Model):
 
     Name = models.CharField(max_length=40)
@@ -100,13 +101,15 @@ class Trainer(models.Model):
         return self.Name
 
 class Compare(models.Model):
-    First = models.ForeignKey(Pokemon, on_delete=models.CASCADE, related_name="First")
-    Second = models.ForeignKey(Pokemon, on_delete=models.CASCADE, related_name="Second")
-    CompareTime = models.DateField()
-    SpecialName = models.CharField(max_length=120)
+         First = models.ForeignKey(Pokemon, on_delete=models.CASCADE, related_name="First")
+         Second = models.ForeignKey(Pokemon, on_delete=models.CASCADE, related_name="Second",default=0)
+         CompareTime = models.DateField()
+         SpecialName = models.CharField(max_length=120)
 
-def __init__(self):
- CompareTime = datetime.datetime.now()
+         def __init__(self):
+            CompareTime = datetime.datetime.now()
+
+
 
 
 

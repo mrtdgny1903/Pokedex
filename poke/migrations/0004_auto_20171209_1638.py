@@ -16,7 +16,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='compare',
             name='Second',
-            field=models.ForeignKey(default='/', on_delete=django.db.models.deletion.CASCADE, related_name='Second', to='poke.Pokemon'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='Second', to='poke.Pokemon'),
             preserve_default=False,
         ),
         migrations.AlterField(

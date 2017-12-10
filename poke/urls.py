@@ -9,7 +9,7 @@ urlpatterns = [
     url(r'^detail/(?P<pk>[0-9]+)/$', views.PokeDetail, name='pokeDetail'),
     url(r'^story/$', views.StoryView.as_view(), name='story'),
     url(r'^generations/$', views.GenerationsView.as_view(), name='generations'),
-   
+    url(r'^compare/$', views.CompareCreate.as_view(), name='compare'),
     # /music/<album_id>/
     #url(r'^(?P<pk>[0-9]+)/$', views.DetailView.as_view(), name='detail'),
     # /music/album/add

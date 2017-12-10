@@ -1,0 +1,150 @@
+{% extends 'poke/base.html' %}
+
+{% block title %}
+
+    {{ object }}
+
+{% endblock %}
+
+
+{% block main %}
+
+    <div class="container-fluid m-5">
+    <div class="header title m-3 h2 border-box-sizing text-lg-center text-danger" >
+       {{ object.SpecialName }} - Compare Detail
+
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+
+             <a href="{% url "poke:pokeDetail" object.First.pk %}"> <button type="button" class="btn btn-warning ribbon"><h3>{{ object.First.Name }}</h3></button></a>
+            <div class="row">
+                <div class="text-lg-center m-5 w-100 border ">
+                    <img src="/static/{{ object.First.Picture.url }}">
+                </div>
+            <div class="col-md-12">
+                <div class="list-group text-lg-center ">
+                  <a class="list-group-item list-group-item-action list-group-item-primary h5"><span class="pull-left">TYPE </span> <span class="badge badge-primary badge-pill pull-right"> {{ object.First.GetType }}</span>  </a>
+                  <a class="list-group-item list-group-item-action list-group-item-primary h5"><span class="pull-left">GENDER </span> <span class="badge badge-primary badge-pill pull-right">{{ object.First.GetGender }}</span>  </a>
+                  <a class="list-group-item list-group-item-action
+                    {% if object.First.Attack > object.Second.Attack %}
+                       list-group-item-success
+                    {% elif object.First.Attack == object.Second.Attack %}
+                         list-group-item-warning
+
+                    {% else %}
+                       list-group-item-danger
+                  {% endif %}
+                   h5"><span  class="pull-left">ATTACK </span> <span class="badge badge-primary badge-pill pull-right">{{ object.First.Attack }}</span>  </a>
+                  <a class="list-group-item list-group-item-action
+                  {% if object.First.Deff > object.Second.Deff %}
+                       list-group-item-success
+                          {% elif object.First.Deff == object.Second.Deff %}
+                         list-group-item-warning
+                    {% else %}
+                       list-group-item-danger
+                  {% endif %}  h5"><span class="pull-left">DEFFENCE </span> <span class="badge badge-primary badge-pill pull-right">{{ object.First.Deff }}</span>  </a>
+                  <a class="list-group-item list-group-item-action
+                {% if object.First.Speed > object.Second.Speed %}
+                          list-group-item-success
+                             {% elif object.First.Speed == object.Second.Speed %}
+                         list-group-item-warning
+                    {% else %}
+                       list-group-item-danger
+                  {% endif %}  h5"><span class="pull-left">SPEED </span> <span class="badge badge-primary badge-pill pull-right">{{ object.First.Speed }}</span>  </a>
+                  <a class="list-group-item list-group-item-action
+                    {% if object.First.Weight > object.Second.Weight %}
+                       list-group-item-success
+                          {% elif object.First.Weight == object.Second.Weight %}
+                         list-group-item-warning
+                    {% else %}
+                       list-group-item-danger
+                  {% endif %}  h5"><span class="pull-left">WEIGHT </span> <span class="badge badge-primary badge-pill pull-right">{{ object.First.Weight }}</span>  </a>
+                <a class="list-group-item list-group-item-action
+                    {% if object.First.Height > object.Second.Height %}
+                       list-group-item-success
+                          {% elif object.First.Height == object.Second.Height %}
+                         list-group-item-warning
+                    {% else %}
+                       list-group-item-danger
+                  {% endif %}  h5"><span class="pull-left">HEIGHT </span> <span class="badge badge-primary badge-pill pull-right">{{ object.First.Height }}</span>  </a>
+
+                </div>
+            </div>
+            </div>
+
+        </div>
+
+
+
+        <div class="col-md-6">
+
+             <a href="{% url "poke:pokeDetail" object.Second.pk %}"> <button type="button" class="btn btn-warning ribbon"><h3>{{ object.Second.Name }}</h3></button></a>
+    <div class="row">
+                <div class="text-lg-center m-5 w-100 border ">
+                    <img src="/static/{{ object.Second.Picture.url }}">
+                </div>
+            <div class="col-md-12">
+                <div class="list-group text-lg-center ">
+                  <a class="list-group-item list-group-item-action list-group-item-primary h5"><span class="pull-left">TYPE </span> <span class="badge badge-primary badge-pill pull-right"> {{ object.Second.GetType }}</span>  </a>
+                  <a class="list-group-item list-group-item-action list-group-item-primary h5"><span class="pull-left">GENDER </span> <span class="badge badge-primary badge-pill pull-right">{{ object.Second.GetGender }}</span>  </a>
+                  <a class="list-group-item list-group-item-action
+                    {% if object.Second.Attack > object.First.Attack %}
+                       list-group-item-success
+                          {% elif object.First.Attack == object.Second.Attack %}
+                         list-group-item-warning
+                    {% else %}
+                       list-group-item-danger
+                  {% endif %}
+                   h5"><span  class="pull-left">ATTACK </span> <span class="badge badge-primary badge-pill pull-right">{{ object.Second.Attack }}</span>  </a>
+                  <a class="list-group-item list-group-item-action
+                  {% if object.Second.Deff > object.First.Deff %}
+                       list-group-item-success
+                          {% elif object.First.Deff == object.Second.Deff %}
+                         list-group-item-warning
+                    {% else %}
+                       list-group-item-danger
+                  {% endif %}  h5"><span class="pull-left">DEFFENCE </span> <span class="badge badge-primary badge-pill pull-right">{{ object.Second.Deff }}</span>  </a>
+                  <a class="list-group-item list-group-item-action
+                {% if object.Second.Speed > object.First.Speed %}
+                          list-group-item-success
+                          {% elif object.First.Speed == object.Second.Speed %}
+                         list-group-item-warning
+                    {% else %}
+                       list-group-item-danger
+                  {% endif %}  h5"><span class="pull-left">SPEED </span> <span class="badge badge-primary badge-pill pull-right">{{ object.Second.Speed }}</span>  </a>
+                  <a class="list-group-item list-group-item-action
+                    {% if object.Second.Weight > object.First.Weight %}
+                       list-group-item-success
+                    {% elif object.First.Weight == object.Second.Weight %}
+                         list-group-item-warning
+                    {% else %}
+                       list-group-item-danger
+                  {% endif %}  h5"><span class="pull-left">WEIGHT </span> <span class="badge badge-primary badge-pill pull-right">{{ object.Second.Weight }}</span>  </a>
+                <a class="list-group-item list-group-item-action
+                    {% if object.Second.Height > object.First.Height %}
+                       list-group-item-success
+                          {% elif object.First.Height == object.Second.Height %}
+                         list-group-item-warning
+                    {% else %}
+                       list-group-item-danger
+                  {% endif %}  h5"><span class="pull-left">HEIGHT </span> <span class="badge badge-primary badge-pill pull-right">{{ object.Second.Height }}</span>  </a>
+
+                </div>
+            </div>
+            </div>
+        </div>
+
+
+
+    </div>
+
+
+
+
+    </div>
+
+
+
+
+{% endblock %}

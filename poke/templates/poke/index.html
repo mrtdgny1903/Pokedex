@@ -3,7 +3,7 @@
 
 
 
-    <div class="container">
+    <div class="container m-5">
     <div class="row">
     <div class="col-md-offset-6 col-md-6 ">
 <button type="button" class="btn btn-success ribbon">Be a Trainer!!</button>
@@ -12,8 +12,6 @@
 
 <div class="row">
 {% for pokemon in object_list %}
-
-
             <div class="col-lg-4 col-md-6 mb-4">
               <div class="card center-block">
                 <a class="text-lg-center m-2" href="{% url "poke:pokeDetail" pokemon.id %}"><img class="card-img-top img-responsive w-50 h-50" src="/static/{{ pokemon.Picture.url }}" alt=""></a>
@@ -22,22 +20,48 @@
                     <a href="#" >{{ pokemon.Name }}</a>
                   </h4>
                   <h5 >Pokemon Name</h5>
-
                   <span class="label label-warning">{{ pokemon.GetType }}</span>
-
-
                 </div>
                 <div class="card-footer">
                <a href="{% url "poke:pokeDetail" pokemon.id%}">  <button class="btn btn-md btn-success- ">Detail</button></a>
                 </div>
               </div>
             </div>
-
-
-
 {% endfor %}
-
           </div>
+<div class="container m-3">
+  <div class="panel panel-primary">
+    <div class="panel-heading h3 m-3 border-box-sizing  xterm-bg-color-57 text-danger ribbon">Last 3 Compares</div>
+    <div class="panel-body">
+        <div class="list-group text-lg-center">
+            {% for Compare in LastCompares %}
+                    <a href="{% url "poke:compareDetail" Compare.pk %}" class="list-group-item list-group-item-warning">
+                    <div class="row">  <div class="col-md-3">
+                            {{ Compare.CompareTime }}
+                    </div>
+                      <div class="col-md-6">
+                                {{ Compare }}
+                        </div>
+
+                    </div>
 
 
+
+                    </a>
+
+            {% endfor %}
+
+
+            </div>
+
+
+
+    </div>
+  </div>
+
+
+
+
+    </div>
+</div>
 {% endblock %}

@@ -8,7 +8,6 @@ def IndexView(request):
     template_name = 'poke/index.html'
     return render(request, template_name, extra_context)
 
-
 class PokemonList(generic.ListView):
     template_name = 'poke/pokemonlist.html'
     def get_queryset(self):

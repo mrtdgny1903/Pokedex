@@ -20,49 +20,94 @@
 
 
         <div class=" col-md-12 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad" >
-          <div class="panel panel-info">
-            <div class="panel-heading">
-              <h3 class="panel-title pokemon-name">{{ object.Name }}</h3>
+          <div class="panel panel-info pokemon-panel">
+            <div class="panel-heading text-lg-left">
+                 <a> <button type="button" class="pokemon-name btn btn-warning ribbon">{{ object.Name }}</button></a>
+
             </div>
             <div class="panel-body">
               <div class="row">
                   <div class="col-md-6">
-                <div class="col-md-3 col-lg-3 " align="center"> <img alt="Pokemon Pic" src="{{ object.Picture.url }}" class="img-circle img-responsive"> </div>
+                <div class="col-xs-10 col-sm-10" align="center"> <img alt="Pokemon Pic" src="{{ object.Picture.url }}" class="img-circle img-responsive"> </div>
 
                 <div class="col-xs-10 col-sm-10 hidden-md hidden-lg"> <br>
-                  <dl>
-                    <dt>Type:</dt>
-                    <dd>{{ object.GetType }}</dd>
-                    <dt> Weight </dt>
-                    <dd>{{ object.Weight }}</dd>
-                    <dt>Height</dt>
-                      <dd>{{ object.Height }}</dd>
-                    <dt>Gender</dt>
-                    <dd>{{ object.GetGender }}</dd>
-<dt>Special Skills</dt>
-                    <dd>{{ object.Abilities  }}</dd>
-                  </dl>
+
+                        <table class="table table-user-information">
+                    <tbody>
+                      <tr>
+                        <td>Type:</td>
+                        <td><span class="pokemon-type pokemon-type-{{ object.GetType }}">{{ object.GetType }}</span></td>
+                      </tr>
+                      <tr>
+                        <td>Weight:</td>
+                        <td>{{ object.Weight }} kg</td>
+                      </tr>
+                      <tr>
+                        <td>Height : </td>
+                        <td>{{ object.Height }} cm</td>
+                      </tr>
+                        <tr>
+                        <td>Gender : </td>
+                        <td>{{ object.GetGender }}</td>
+                      </tr>
+
+                        <tr>
+                        <td>Special Skills : </td>
+                        <td>{{ object.Abilities  }}</td>
+                      </tr>
+
+
+                      </tr>
+
+                    </tbody>
+                  </table>
+
                 </div>
 </div>
                   <div class="col-md-6">
                                   <div class=" col-md-12">
                      <div class="panel panel-primary">
                     <div class="panel-heading">
-              <h4 class="panel-title">Abbilities</h4>
+              <h4 class="panel-title">Abilities</h4>
 
                   <table class="table table-user-information">
                     <tbody>
                       <tr>
-                        <td>Attack:</td>
-                        <td>{{ object.Attack }}</td>
+                        <td class="pokemon-w-10">HP</td>
+                        <td class="pokemon-w-10">{{  object.HP }}</td>
+                        <td><div class="progress">
+                       <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="{{  object.HP }}"
+                      aria-valuemin="0" aria-valuemax="300" style="width:{% widthratio object.HP 3 1 %}%">
+                                         </div>
+                             </div>
+                        </td>
                       </tr>
                       <tr>
-                        <td>Deffence:</td>
-                        <td>{{ object.Deff }}</td>
+                        <td class="pokemon-w-10">Attack</td>
+                        <td class="pokemon-w-10">{{  object.Attack }}</td>
+                        <td><div class="progress">
+                       <div class="progress-bar bg-success" role="progressbar" aria-valuenow="{{  object.Attack }}"
+                      aria-valuemin="0" aria-valuemax="300" style="width:{% widthratio object.Attack 3 1 %}%">
+                                         </div>
+                             </div></td>
                       </tr>
                       <tr>
-                        <td>Speed : </td>
-                        <td>{{ object.Speed }}</td>
+                        <td class="pokemon-w-10">Defence</td>
+                        <td class="pokemon-w-10"> {{  object.Deff }}</td>
+                        <td><div class="progress">
+                       <div class="progress-bar bg-info" role="progressbar" aria-valuenow="{{  object.Deff }}"
+                      aria-valuemin="0" aria-valuemax="300" style="width:{% widthratio object.Deff 3 1 %}%">
+                                         </div>
+                             </div></td>
+                      </tr>
+                      <tr>
+                        <td class="pokemon-w-10">Speed </td>
+                        <td class="pokemon-w-10">{{  object.Speed }} </td>
+                        <td><div class="progress">
+                       <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="{{  object.Speed }}"
+                      aria-valuemin="0" aria-valuemax="300" style="width:{% widthratio object.Speed 3 1 %}%">
+                                         </div>
+                             </div></td>
                       </tr>
 
 
@@ -78,21 +123,27 @@
 
     <div class="list-group">
         {% for pokemon in Similars %}
-          <div class="list-group-item list-group-item-action flex-column align-items-start">
-        <div class="d-flex w-100 justify-content-between">
-            <div class="col-md-9">
-          <h5 class="mb-1 ">{{ pokemon.Name }}</h5>
-          <small>{{ pokemon.GetType }}</small>
+          <div class="list-group-item list-group-item-action pokemon-panel align-items-start">
+        <div class="row">
+            <div class="col-md-6">
+          <span class="pokemon-name"> {{ pokemon.Name }}</span>
+
                 </div>
-                       <img src="{{ pokemon.Picture.url }}" class="h-25 col-md-3"/>
+            <div class="col-md-6"> <img src="{{ pokemon.Picture.url }}" class="img-150-150"/>
+                    </div>
+            <div class="col-md-6 text-lg-center"> <span class="pokemon-type pokemon-type-{{ pokemon.GetType }}">{{ pokemon.GetType }}</span></div>
+
                </div>
-                <small>{{  pokemon.Abilities  }}</small>
-           <a href="{% url "poke:compareFast" object.pk pokemon.pk %}"><button class="btn btn-sm btn-success ribbon"> Compare </button></a>
-              <a href="{% url "poke:pokeDetail" pokemon.pk %}" ><button type="button" class="btn btn-sm btn-success ribbon"> Detail </button></a>
+              <div class="col-md-6 pt-sm-4 ">
+                  <span  >{{  pokemon.Abilities  }}</span>
+              </div>
+
+        <div class="row"><div class="col-md-6">  <a href="{% url "poke:compareFast" object.pk pokemon.pk %}"><button class="btn btn-sm btn-warning "> Compare </button></a>
+
+         </div><div class="col-md-6">
+              <a href="{% url "poke:pokeDetail" pokemon.pk %}" ><button type="button" class="btn btn-sm btn-success "> Detail </button></a>
+         </div></div>
           </div>
-
-
-
         {% endfor %}
 
 

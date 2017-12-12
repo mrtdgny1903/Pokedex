@@ -15,7 +15,7 @@
 
     </div>
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-6 pokemon-panel">
 
              <a href="{% url "poke:pokeDetail" object.First.pk %}"> <button type="button" class="pokemon-name btn btn-warning ribbon"><h3>{{ object.First.Name }}</h3></button></a>
             <div class="row">
@@ -26,6 +26,7 @@
                 <div class="list-group text-lg-center ">
                   <a class="list-group-item list-group-item-action list-group-item-primary h5"><span class="pull-left">TYPE </span> <span class="badge badge-primary badge-pill pull-right pokemon-type pokemon-type-{{  object.First.GetType}}"> {{ object.First.GetType }}</span>  </a>
                   <a class="list-group-item list-group-item-action list-group-item-primary h5"><span class="pull-left">GENDER </span> <span class="badge badge-primary badge-pill pull-right">{{ object.First.GetGender }}</span>  </a>
+                  <a class="list-group-item list-group-item-action list-group-item-primary h5"><span class="pull-left">GENERATION </span> <span class="badge badge-primary badge-pill pull-right">{{ object.First.GetGeneration }}</span>  </a>
                   <a class="list-group-item list-group-item-action
                     {% if object.First.Attack > object.Second.Attack %}
                        list-group-item-success
@@ -43,7 +44,7 @@
                          list-group-item-warning
                     {% else %}
                        list-group-item-danger
-                  {% endif %}  h5"><span class="pull-left">DEFFENCE </span> <span class="badge badge-primary badge-pill pull-right">{{ object.First.Deff }}</span>  </a>
+                  {% endif %}  h5"><span class="pull-left">DEFENCE </span> <span class="badge badge-primary badge-pill pull-right">{{ object.First.Deff }}</span>  </a>
                   <a class="list-group-item list-group-item-action
                 {% if object.First.Speed > object.Second.Speed %}
                           list-group-item-success
@@ -77,7 +78,7 @@
 
 
 
-        <div class="col-md-6">
+        <div class="col-md-6 pokemon-panel">
 
              <a href="{% url "poke:pokeDetail" object.Second.pk %}"> <button type="button" class="btn btn-warning ribbon pokemon-name"><h3>{{ object.Second.Name }}</h3></button></a>
     <div class="row">
@@ -88,6 +89,7 @@
                 <div class="list-group text-lg-center ">
                   <a class="list-group-item list-group-item-action list-group-item-primary h5"><span class="pull-left">TYPE </span> <span class="badge badge-primary badge-pill pull-right pokemon-type pokemon-type-{{  object.Second.GetType}}"> {{ object.Second.GetType }}</span>  </a>
                   <a class="list-group-item list-group-item-action list-group-item-primary h5"><span class="pull-left">GENDER </span> <span class="badge badge-primary badge-pill pull-right">{{ object.Second.GetGender }}</span>  </a>
+                  <a class="list-group-item list-group-item-action list-group-item-primary h5"><span class="pull-left">GENERATION </span> <span class="badge badge-primary badge-pill pull-right">{{ object.Second.GetGeneration }}</span>  </a>
                   <a class="list-group-item list-group-item-action
                     {% if object.Second.Attack > object.First.Attack %}
                        list-group-item-success
@@ -104,7 +106,7 @@
                          list-group-item-warning
                     {% else %}
                        list-group-item-danger
-                  {% endif %}  h5"><span class="pull-left">DEFFENCE </span> <span class="badge badge-primary badge-pill pull-right">{{ object.Second.Deff }}</span>  </a>
+                  {% endif %}  h5"><span class="pull-left">DEFENCE </span> <span class="badge badge-primary badge-pill pull-right">{{ object.Second.Deff }}</span>  </a>
                   <a class="list-group-item list-group-item-action
                 {% if object.Second.Speed > object.First.Speed %}
                           list-group-item-success

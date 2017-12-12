@@ -256,9 +256,22 @@ span.pokemon-type-Fighting{
     font-size: 40px;
     font-family: 'Ranchers', cursive;
 }
-
+.pokemon-w-10{
+    width: 10%;
+}
 .pokemon-title{
     font-size: 50px;
     font-family: 'Ranchers', cursive;
     font-weight: bold;
+}
+.pokemon-panel{
+    border: solid 3px lightgrey;
+    padding: 2%;
+    border-radius: 25px;
+}
+.pokemon-col{
+    padding-top: 5%; !important;
+    border-radius: 25px;
+    border : solid 2px grey; !important;
+
 }

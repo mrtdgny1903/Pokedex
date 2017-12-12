@@ -13,7 +13,7 @@ Pokemon List
     <div class="row">
 {% for pokemon in object_list %}
             <div class="col-lg-4 col-md-6 mb-4">
-              <div class="card center-block">
+              <div class=" center-block pokemon-col card" >
                 <a class="text-lg-center" href="{% url "poke:pokeDetail" pokemon.id %}"><img class="card-img-top img-responsive img-250-250" src="{{ pokemon.Picture.url }}" alt=""></a>
                 <div class="card-body  text-md-center m-2">
                   <h4 class="card-title  m-3">

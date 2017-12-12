@@ -6,9 +6,10 @@ class Pokemon(models.Model):
 
     Name = models.CharField(max_length=40)
     Picture = models.FileField(upload_to='images/')
-    Height = models.IntegerField()
-    Weight = models.IntegerField()
+    Height = models.FloatField()
+    Weight = models.FloatField()
     Abilities =models.CharField(max_length=40)
+    HP = models.IntegerField(default=10)
     Deff = models.IntegerField()
     Attack = models.IntegerField()
     Speed = models.IntegerField()
@@ -58,7 +59,8 @@ class Pokemon(models.Model):
         ('6', 'VII'),
 
     ) """
-
+    def GetGeneration(self):
+        return self.Generation.get(self.generation_type)
     Generation = {
         '0' :'I',
         '1' :'II',

@@ -17,14 +17,14 @@
     <div class="row">
         <div class="col-md-6">
 
-             <a href="{% url "poke:pokeDetail" object.First.pk %}"> <button type="button" class="btn btn-warning ribbon"><h3>{{ object.First.Name }}</h3></button></a>
+             <a href="{% url "poke:pokeDetail" object.First.pk %}"> <button type="button" class="pokemon-name btn btn-warning ribbon"><h3>{{ object.First.Name }}</h3></button></a>
             <div class="row">
                 <div class="text-lg-center m-5 w-100 border ">
-                    <img src="/static/{{ object.First.Picture.url }}">
+                    <img class="img-250-250" src="{{ object.First.Picture.url }}">
                 </div>
             <div class="col-md-12">
                 <div class="list-group text-lg-center ">
-                  <a class="list-group-item list-group-item-action list-group-item-primary h5"><span class="pull-left">TYPE </span> <span class="badge badge-primary badge-pill pull-right"> {{ object.First.GetType }}</span>  </a>
+                  <a class="list-group-item list-group-item-action list-group-item-primary h5"><span class="pull-left">TYPE </span> <span class="badge badge-primary badge-pill pull-right pokemon-type pokemon-type-{{  object.First.GetType}}"> {{ object.First.GetType }}</span>  </a>
                   <a class="list-group-item list-group-item-action list-group-item-primary h5"><span class="pull-left">GENDER </span> <span class="badge badge-primary badge-pill pull-right">{{ object.First.GetGender }}</span>  </a>
                   <a class="list-group-item list-group-item-action
                     {% if object.First.Attack > object.Second.Attack %}
@@ -79,14 +79,14 @@
 
         <div class="col-md-6">
 
-             <a href="{% url "poke:pokeDetail" object.Second.pk %}"> <button type="button" class="btn btn-warning ribbon"><h3>{{ object.Second.Name }}</h3></button></a>
+             <a href="{% url "poke:pokeDetail" object.Second.pk %}"> <button type="button" class="btn btn-warning ribbon pokemon-name"><h3>{{ object.Second.Name }}</h3></button></a>
     <div class="row">
                 <div class="text-lg-center m-5 w-100 border ">
-                    <img src="/static/{{ object.Second.Picture.url }}">
+                    <img class="img-250-250" src="{{ object.Second.Picture.url }}">
                 </div>
             <div class="col-md-12">
                 <div class="list-group text-lg-center ">
-                  <a class="list-group-item list-group-item-action list-group-item-primary h5"><span class="pull-left">TYPE </span> <span class="badge badge-primary badge-pill pull-right"> {{ object.Second.GetType }}</span>  </a>
+                  <a class="list-group-item list-group-item-action list-group-item-primary h5"><span class="pull-left">TYPE </span> <span class="badge badge-primary badge-pill pull-right pokemon-type pokemon-type-{{  object.Second.GetType}}"> {{ object.Second.GetType }}</span>  </a>
                   <a class="list-group-item list-group-item-action list-group-item-primary h5"><span class="pull-left">GENDER </span> <span class="badge badge-primary badge-pill pull-right">{{ object.Second.GetGender }}</span>  </a>
                   <a class="list-group-item list-group-item-action
                     {% if object.Second.Attack > object.First.Attack %}

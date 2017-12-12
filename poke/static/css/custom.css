@@ -194,3 +194,71 @@ button.btn-default:before {
 .landscape {
     height: 100%;
 }
+img.img-250-250{
+
+    height: 250px;
+    width: 250px;
+}
+img.img-150-150{
+
+    height: 150px !important;
+    width: 150px !important;
+}
+span.pokemon-type{
+    font-size: 14px;
+    border-radius: 15px;
+    padding: 3px 11px;
+    color: white;
+    font-weight: 500;
+    font-family: 'Bungee', cursive;
+}
+.pokemon-center{
+        display: flex;
+    justify-content: center;
+}
+span.pokemon-type-Fire{
+    background-color: orange;
+}
+span.pokemon-type-Water{
+    background-color: #414aff;
+}
+span.pokemon-type-Poison{
+    background-color: #094e08;
+}
+span.pokemon-type-Grass{
+    background-color: #73ff4f;
+}
+span.pokemon-type-Bug{
+    background-color: #614415;
+}
+span.pokemon-type-Electric{
+    background-color: #8c6eff;
+}
+span.pokemon-type-Ice{
+    background-color: #5cfbff;
+}
+span.pokemon-type-Fairy{
+    background-color: #f880ff;
+}
+span.pokemon-type-Ground{
+    background-color: #5b0008;
+}
+span.pokemon-type-Dark{
+    background-color: #000000;
+}
+span.pokemon-type-Psychic{
+    background-color: #bb57ff;
+}
+span.pokemon-type-Fighting{
+    background-color: #b27a91;
+}
+.pokemon-name{
+    font-size: 40px;
+    font-family: 'Ranchers', cursive;
+}
+
+.pokemon-title{
+    font-size: 50px;
+    font-family: 'Ranchers', cursive;
+    font-weight: bold;
+}

@@ -40,6 +40,7 @@ class Pokemon(models.Model):
     Gender = (
         ('0', 'Male'),
         ('1', 'Female'),
+        ('2', '%50 Male %50 Female'),
 
     )
     gender_type = models.CharField(max_length=1, choices=Gender)

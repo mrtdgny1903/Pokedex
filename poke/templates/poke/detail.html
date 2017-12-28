@@ -57,7 +57,14 @@
                       </tr>
 
 
-                      </tr>
+
+                              {% if user.is_authenticated %}
+
+                           <tr>
+
+                             <td><a href="{% url "poke:addToTrainer" object.pk %}"><button class="btn btn-warning"> Add </button></a> </td>
+                       </tr>
+                     {% endif %}
 
                     </tbody>
                   </table>

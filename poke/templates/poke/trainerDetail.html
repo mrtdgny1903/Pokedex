@@ -1,0 +1,50 @@
+{% extends 'poke/base.html' %}
+
+
+
+{% block title %}
+    {{ user.username }}'s Detail
+{% endblock %}
+
+
+{% block main %}
+<div class="row m-2  pokemon-center" >
+<div class="container pokemon-panel">
+    <div class="col-md-12 pokemon-title pokemon-center">
+        {{ user.username }}'s Pokemons
+    </div>
+    <div>
+
+        <table class="col-md-12 " >
+            <thead>
+            <th style="" class="w-25w-"></th>
+            <th class="w-50"></th>
+            <th></th>
+            </thead>
+            <tbody >
+            {% for pokemon in pokemons  %}
+
+            <tr class="pokemon-panel">
+                <td class="pokemon-center p-2">
+                    <img src="{{ pokemon.Picture.url }}" class="img-150-150">
+                </td>
+                <td class="pokemon-title text-lg-center">
+                  <a href="{% url "poke:pokeDetail" pokemon.pk%}">  {{ pokemon.Name }}</a>
+                </td>
+                <td class="p-3">
+                    <a href="{% url "poke:RemovePokemon" pokemon.pk %}">
+                    <button class="btn btn-danger"> Remove</button></a>
+                </td>
+            </tr>
+            {% endfor %}
+
+            </tbody>
+        </table>
+
+
+    </div>
+</div>
+
+
+</div>
+{% endblock %}

@@ -79,26 +79,8 @@ class Trainer(models.Model):
 
     Name = models.CharField(max_length=40)
     UserT = models.OneToOneField(User,on_delete=models.CASCADE)
-    Picture = models.FileField(upload_to='images/')
-    Appearance = models.CharField(max_length=120)
     Pokemons = models.ManyToManyField(Pokemon)
-    Gender = (
-        ('0', 'Male'),
-        ('1', 'Female'),
-    )
-    gender_type = models.CharField(max_length=1, choices=Gender)
 
-    Region = (
-        ('0', 'Kanto'),
-        ('1', 'Johto'),
-        ('2', 'Hoenn'),
-        ('3', 'Sinnoh'),
-        ('4', 'Unova'),
-        ('5', 'Kalos'),
-        ('6', 'Alola'),
-
-    )
-    region_type = models.CharField(max_length=1, choices=Region)
 
     def __str__(self):
         return self.Name
@@ -108,10 +90,8 @@ class Compare(models.Model):
          Second = models.ForeignKey(Pokemon, on_delete=models.CASCADE, related_name="Second",default=0)
          CompareTime = models.DateTimeField(default=datetime.datetime.now())
          SpecialName = models.CharField(max_length=120)
-
          def __str__(self):
              return self.First.Name+" Vs. " + self.Second.Name
-
          def get_absolute_url(self):
              return "/poke/"
 

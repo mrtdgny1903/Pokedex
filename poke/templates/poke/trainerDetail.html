@@ -6,9 +6,13 @@
     {{ user.username }}'s Detail
 {% endblock %}
 
+{% block mypokemonsActive %}
+            active
+            {% endblock %}
+
 
 {% block main %}
-<div class="row m-2  pokemon-center" >
+<div class="row m-5 pokemon-center" >
 <div class="container pokemon-panel">
     <div class="col-md-12 pokemon-title pokemon-center">
         {{ user.username }}'s Pokemons

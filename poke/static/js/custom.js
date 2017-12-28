@@ -16,7 +16,10 @@ $(document).ready(function() {
   })
 });
 
-
+jQuery.expr[':'].contains = function(a, i, m) {
+  return jQuery(a).text().toUpperCase()
+      .indexOf(m[3].toUpperCase()) >= 0;
+};
 
 $('.search').keyup(function () {
     var result = $(this);

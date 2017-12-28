@@ -2,27 +2,36 @@
 {% block title %}
 Pokemon List
 {% endblock %}
+{% block pokemonlistActive %}
+            active
+            {% endblock %}
 
 {% block main %}
 <section class="m-3">
 <div class="panel panel-primary">
 <div class="panel-heading text-lg-center m-2">
-    <div class="pokemon-title">ALL POKEMONS</div>
+    <div class="pokemon-title">{{ page_title }}</div>
 </div>
+
+
+<div class="panel-heading text-lg-center m-2">
+    <div class=""><label for="txtSearch">Search : </label> <input id="txtSearch" type="text" class="search" value=""/></div>
+</div>
+
     <div class="container-fluid">
     <div class="row">
 {% for pokemon in object_list %}
-            <div class="col-lg-4 col-md-6 mb-4">
+            <div class="col-lg-4 col-md-6 mb-4 searchingPokemon">
               <div class=" center-block pokemon-col card" >
                 <a class="text-lg-center" href="{% url "poke:pokeDetail" pokemon.id %}"><img class="card-img-top img-responsive img-250-250" src="{{ pokemon.Picture.url }}" alt=""></a>
                 <div class="card-body  text-md-center m-2">
                   <h4 class="card-title  m-3">
-                    <a href="{% url "poke:pokeDetail" pokemon.id %}" class="pokemon-name" >{{ pokemon.Name }}</a>
+                    <a href="{% url "poke:pokeDetail" pokemon.id %}" class="pokemon-name searchingText" >{{ pokemon.Name }}</a>
                   </h4>
-                  <span class="pokemon-type pokemon-type-{{ pokemon.GetType }}">{{ pokemon.GetType }}</span>
+                  <span class="searchingText pokemon-type pokemon-type-{{ pokemon.GetType }}">{{ pokemon.GetType }}</span>
                 </div>
                 <div class="card-footer">
-               <a href="{% url "poke:pokeDetail" pokemon.id%}">  <button class="btn btn-md btn-success- ">Detail</button></a>
+               <a href="{% url "poke:pokeDetail" pokemon.id%}">  <button class="btn btn-md btn-success- "> <i class="fa fa-search" aria-hidden="true"></i> &nbsp;Detail</button></a>
                 </div>
               </div>
             </div>

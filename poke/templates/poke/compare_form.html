@@ -6,18 +6,20 @@
 Compare
 {% endblock %}
 
-
+{% block compareActive %}
+            active
+            {% endblock %}
 
 {% block main %}
 
-<div class="row">
+<div class="row  pokemon-center m-4">
     <div class="col-md-7">
-<div class="panel panel-primary">
+<div class="panel pokemon-panel m-2">
 <div class="panel panel-heading">
-    <div class="panel-title text-lg-center m-3 h2">Compare Pokemons!</div>
+    <div class="panel-title text-lg-center m-3 h2 pokemon-title">Compare Pokemons!</div>
 </div>
-<div class="panel-body">
-<form class="form-horizontal" action="" method="post" enctype="multipart/form-data">
+<div class="panel-body  pokemon-center">
+<form class="form-horizontal " action="" method="post" enctype="multipart/form-data">
     {% csrf_token %}
 {% include 'poke/form-template.html'%}
     <div class="form-group">

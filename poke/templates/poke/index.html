@@ -1,11 +1,16 @@
 {% extends 'poke/base.html' %}
+
+{% block homeActive %}
+            active
+            {% endblock %}
+
 {% block main %}
       {% if user.is_authenticated %}
     <div class="container m-5">
     <div class="row pokemon-center" >
     <div class="col-md-6 ">
         <a href="{% url "poke:trainerDetail" %}">
-<button type="button" class="btn btn-success ribbon">Welcome {{ user.username }}&nbsp;!</button></a>
+<button type="button" class="btn btn-danger ribbon">Welcome {{ user.username }}&nbsp;!</button></a>
 </div>
     </div>
 </div>
@@ -15,7 +20,7 @@
     <div class="row pokemon-center" >
     <div class="col-md-6 ">
         <a href="{% url "poke:be_trainer" %}">
-<button type="button" class="btn btn-success ribbon">Be a Trainer!!</button></a>
+<button type="button" class="btn btn-danger ribbon"><i class="fa fa-user-circle" aria-hidden="true"></i> Be a Trainer!!</button></a>
 </div>
     </div>
 </div>
@@ -32,7 +37,7 @@
                   <span class="pokemon-type pokemon-type-{{ pokemon.GetType }}">{{ pokemon.GetType }}</span>
                 </div>
                 <div class="card-footer">
-               <a href="{% url "poke:pokeDetail" pokemon.id%}">  <button class="btn btn-md btn-success- ">Detail</button></a>
+               <a href="{% url "poke:pokeDetail" pokemon.id%}">  <button class="btn  btn-success- "> <i class="fa fa-search" aria-hidden="true"></i> &nbsp;Detail</button></a>
                 </div>
               </div>
             </div>

@@ -5,6 +5,11 @@
 {{ object.Name }} Detail
 {% endblock %}
 
+{% block pokemonlistActive %}
+            active
+            {% endblock %}
+
+
 {% block main %}
 
     <div class="card">
@@ -37,6 +42,10 @@
                       <tr>
                         <td>Type:</td>
                         <td><span class="pokemon-type pokemon-type-{{ object.GetType }}">{{ object.GetType }}</span></td>
+                      </tr>
+                      <tr>
+                        <td>Generation:</td>
+                        <td>{{ object.GetGeneration }}</td>
                       </tr>
                       <tr>
                         <td>Weight:</td>
@@ -145,10 +154,10 @@
                   <span  >{{  pokemon.Abilities  }}</span>
               </div>
 
-        <div class="row"><div class="col-md-6">  <a href="{% url "poke:compareFast" object.pk pokemon.pk %}"><button class="btn btn-sm btn-warning "> Compare </button></a>
+        <div class="row"><div class="col-md-6">  <a href="{% url "poke:compareFast" object.pk pokemon.pk %}"><button class="btn btn-sm btn-warning "><i class="fa fa-compress" aria-hidden="true"></i> Compare </button></a>
 
          </div><div class="col-md-6">
-              <a href="{% url "poke:pokeDetail" pokemon.pk %}" ><button type="button" class="btn btn-sm btn-success "> Detail </button></a>
+              <a href="{% url "poke:pokeDetail" pokemon.pk %}" ><button type="button" class="btn btn-sm btn-success "> <i class="fa fa-search" aria-hidden="true"></i> &nbsp; Detail </button></a>
          </div></div>
           </div>
         {% endfor %}

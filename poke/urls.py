@@ -6,6 +6,7 @@ urlpatterns = [
         # /music/
     url(r'^$' ,views.IndexView,name='index'),
     url(r'^all/$', views.PokemonList.as_view(), name='pokemonList'),
+    url(r'^all/(?P<generation>[\w\-]+)/$', views.GenerationPokeList, name='pokemonListGenerations'),
     url(r'^detail/(?P<pk>[0-9]+)/$', views.PokeDetail, name='pokeDetail'),
     url(r'^compDetail/(?P<pk>[0-9]+)/$', views.CompareDetail, name='compareDetail'),
     url(r'^story/$', views.StoryView.as_view(), name='story'),

@@ -3,23 +3,25 @@
 {% block title %}
 Be Trainer!
 {% endblock %}
-
+{% block betrainerActive %}
+            active
+            {% endblock %}
 
 
 {% block main %}
 
-<div class="row">
-    <div class="col-md-7">
+<div class="row pokemon-center m-4" >
+    <div class="col-md-12">
 <div class="panel panel-primary">
 <div class="panel panel-heading">
-    <div class="panel-title text-lg-center m-3 h2">Be Trainer!</div>
+    <div class="panel-title text-lg-center m-3 h2 pokemon-title">Be Trainer!</div>
 </div>
-<div class="panel-body">
-<form class="form-horizontal" action="" method="post" enctype="multipart/form-data">
+<div class="panel-body pokemon-center">
+<form class="form-horizontal pokemon-panel " action="" method="post" enctype="multipart/form-data">
     {% csrf_token %}
 {% include 'poke/form-template.html'%}
-    <div class="form-group">
-        <div class="col-sm-offset-2 col-sm-10">
+    <div class="form-group pokemon-center">
+        <div class="col-sm-offset-2 col-md-10">
             <button type="submit" class="btn btn-warning" >Register</button>
         </div>
     </div>

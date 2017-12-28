@@ -13,7 +13,6 @@ class Pokemon(models.Model):
     Deff = models.IntegerField()
     Attack = models.IntegerField()
     Speed = models.IntegerField()
-    Appearence = models.CharField(max_length=120)
     
     Type = (
         ('0', 'Fire'),
@@ -33,7 +32,7 @@ class Pokemon(models.Model):
         ('14', 'Dragon'),
         ('15', 'Flying'),
     )
-    skill_type = models.CharField(max_length=1, choices=Type)
+    skill_type = models.CharField(max_length=2, choices=Type)
 
     def GetType(self):
         return self.Type[int(self.skill_type)][1]

@@ -20,40 +20,56 @@
 
     <link href="https://fonts.googleapis.com/css?family=Bungee" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Ranchers" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Berkshire+Swash" rel="stylesheet">
+     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link href="/static/css/custom.css" rel="stylesheet">
   </head>
   <body>
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <nav class="navbar navbar-expand-lg pokemon-navbar fixed-top">
       <div class="container">
-        <a class="navbar-brand" href="{% url "poke:index" %}">Pokedex</a>
+        <a class=" pokemon-logo navbar-brand" href="{% url "poke:index" %}"><img class="pokemon-logo-img" src="/static/images/pokemon_logo.png"> Pokedex</a>
+
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
           <div class="navbar navbar"></div>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
+            <li class="nav-item {% block homeActive %}
+
+            {% endblock %}">
+
               <a class="nav-link" href="{% url "poke:index" %}">Home
-                <span class="sr-only">(current)</span>
+
               </a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item {% block storyActive %}
+
+            {% endblock %}">
               <a class="nav-link" href="{% url "poke:story" %}">Story</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item {% block pokemonlistActive %}
+
+            {% endblock %}">
               <a class="nav-link" href="{% url "poke:pokemonList" %}">Pokemons</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item {% block generationsActive %}
+
+            {% endblock %}">
               <a class="nav-link" href="{% url "poke:generations" %}">Generations</a>
             </li>
-              <li class="nav-item">
+              <li class="nav-item {% block compareActive %}
+
+            {% endblock %}">
               <a class="nav-link" href="{% url "poke:compare" %}">Compare</a>
             </li>
 
               {% if user.is_authenticated %}
                          <li class="nav-item">
-              <a class="nav-link" href="{% url "poke:trainerDetail" %}">My Pokemons</a>
+              <a class="nav-link {% block mypokemonsActive %}
+
+            {% endblock %}" href="{% url "poke:trainerDetail" %}">My Pokemons</a>
             </li>
              <li class="nav-item">
               <a class="nav-link" href="{% url "poke:logout" %}">Logout</a>
@@ -61,10 +77,15 @@
 
         {% else %}
                     <li class="nav-item">
-              <a class="nav-link" href="{% url "poke:be_trainer" %}">Be Trainer!</a>
+              <a class="nav-link {% block betrainerActive %}
+
+            {% endblock %}" href="{% url "poke:be_trainer" %}">Be Trainer!</a>
             </li>
         <li class="nav-item">
-              <a class="nav-link" href="{% url "poke:login" %}">Login</a>
+              <a class="nav-link {% block loginActive %}
+
+            {% endblock %}
+" href="{% url "poke:login" %}">Login</a>
             </li>
 
             {% endif %}
@@ -96,7 +117,7 @@
     <!-- /.container -->
 
     <!-- Footer -->
-    <footer class="py-5 bg-dark">
+    <footer class="py-5 pokemon-navbar">
       <div class="container">
         <p class="m-0 text-center text-white">Copyright &copy; Pokedex 2017</p>
       </div>

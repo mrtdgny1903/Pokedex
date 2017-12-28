@@ -13,8 +13,25 @@ def IndexView(request):
 
 class PokemonList(generic.ListView):
     template_name = 'poke/pokemonlist.html'
+    extra_context = {"page_title" : "All Pokemons"}
     def get_queryset(self):
         return  Pokemon.objects.order_by().all()
+
+def GenerationPokeList(request,generation):
+    template_name = 'poke/pokemonlist.html'
+    gType = 0
+    for gen in Pokemon.Generation.keys():
+        if Pokemon.Generation.get(gen) == generation:
+            gType = gen
+
+
+    objects = Pokemon.objects.filter(generation_type= gType)
+
+    return render(request, template_name,
+                  {"object_list": objects , "page_title" : generation +" Generation Pokemons" })
+
+
+
 
 class StoryView(generic.TemplateView):
     template_name = 'poke/story.html'
@@ -91,6 +108,8 @@ class CompareCreate(CreateView):
     model = Compare
     template_name = "poke/compare_form.html"
     fields = ["First","Second","SpecialName"]
+
+
 
 class UserFormView(View):
     form_class = UserForm

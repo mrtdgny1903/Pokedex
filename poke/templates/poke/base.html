@@ -51,6 +51,24 @@
               <a class="nav-link" href="{% url "poke:compare" %}">Compare</a>
             </li>
 
+              {% if user.is_authenticated %}
+                         <li class="nav-item">
+              <a class="nav-link" href="{% url "poke:trainerDetail" %}">My Pokemons</a>
+            </li>
+             <li class="nav-item">
+              <a class="nav-link" href="{% url "poke:logout" %}">Logout</a>
+            </li>
+
+        {% else %}
+                    <li class="nav-item">
+              <a class="nav-link" href="{% url "poke:be_trainer" %}">Be Trainer!</a>
+            </li>
+        <li class="nav-item">
+              <a class="nav-link" href="{% url "poke:login" %}">Login</a>
+            </li>
+
+            {% endif %}
+
           </ul>
         </div>
       </div>

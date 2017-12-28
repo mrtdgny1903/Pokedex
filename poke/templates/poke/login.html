@@ -1,0 +1,23 @@
+{% extends 'poke/base.html' %}
+
+{% block title %}Login{% endblock %}
+
+{% block main %}
+    <div class="container-fluid pokemon-center m-3">
+
+        <div class="pokemon-panel center col-md-8 pokemon-center">
+
+            <div class="pokemon-title row m-2">Continue as a Trainer!!</div>
+    <div class="row p-4">
+      <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-success ">Login</button>
+  </form>
+    </div>
+
+    </div>
+    </div>
+
+
+{% endblock %}
